@@ -1,0 +1,25 @@
+{
+  "name": "sql-employee-tracker",
+  "version": "1.0.0",
+  "description": "a program to be able to view and manage the departments, roles, and employees in my company so that I can organize my business plan",
+  "main": "server.js",
+  "scripts": {
+    "test": "",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikaylaakelly/SQL-Employee-Tracker.git"
+  },
+  "author": "mikayla martin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikaylaakelly/SQL-Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/mikaylaakelly/SQL-Employee-Tracker#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "inquirer": "^8.2.4",
+    "mysql2": "^2.2.5"
+  }
+}
