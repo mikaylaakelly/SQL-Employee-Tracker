@@ -16,7 +16,7 @@ const db = mysql.createConnection({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: 3001,
+  port: 3306,
 });
 
 db.connect((err) => {
@@ -25,6 +25,11 @@ db.connect((err) => {
     return;
   }
   console.log('Connected to the company_db database.');
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  employeeTracker();
 });
 
   function employeeTracker(){
@@ -141,11 +146,6 @@ const query = `SELECT
 
 
 
-app.listen(PORT, () => {
-console.log(`Server running on port ${PORT}`);
-});
-
-
 const departmentQuery = `INSERT INTO department (department_name) VALUES (?)`;
 
 function addDepartment() {
@@ -238,12 +238,12 @@ function updateEmployeeRole() {
     inquirer.prompt([
         {
             type: 'input',
-            name: 'employee_Id',
+            name: 'employeeId',
             message: 'Enter the ID of the employee whose role you want to update:'
         },
         {
             type: 'input',
-            name: 'new_RoleId',
+            name: 'newRoleId',
             message: 'Enter the new role ID for the employee:'
         }
     ]).then(answer => {
